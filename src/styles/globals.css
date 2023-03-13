@@ -86,15 +86,19 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb)) !important;
+  background: black !important;
+  width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
 a {
   color: inherit;
   text-decoration: none;
