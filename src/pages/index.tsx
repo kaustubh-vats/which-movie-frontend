@@ -406,12 +406,12 @@ const getForm: Function = (minYear: number, maxYear: number, genres: Array<strin
         <p className={styles.Otherway + ' display-6 text-center'}>
           If you don't know any movie you like, you can also choose some genres and languages you like and we will recommend you some movies.
         </p>
-        <i onClick={()=>{
+        <i onClick={() => {
           const genreSection = document.getElementById('genreSection');
           genreSection && genreSection.scrollIntoView({
             behavior: 'smooth'
           });
-        }} className={"fa-solid fa-arrow-down "+styles.currsorPointer}></i>
+        }} className={"fa-solid fa-arrow-down " + styles.currsorPointer}></i>
       </section>
       <section id='genreSection'>
         <form onSubmit={getRecommendation} >
@@ -497,7 +497,7 @@ function renderFooter(): JSX.Element {
     <div className={styles.footerContainer}>
       <span className={styles.footerText}>Made with <i className={
         "fa-solid fa-heart " + styles.heart
-      }/>  by <a href="https://kaustubhvats-portfolio.netlify.app" target='_blank'>Kaustubh</a></span>
+      } />  by <a href="https://kaustubhvats-portfolio.netlify.app" target='_blank'>Kaustubh</a></span>
     </div>
   );
 }
@@ -507,9 +507,11 @@ export default function Home({ data }: any) {
   const [currMovieData1, setCurrMovieData1] = useState<any>({});
   return (
     <div className={styles.main}>
-      {getForm(1913, 2023, genre, Object.keys(languages), data, setMovieData1, movieData1, setCurrMovieData1, currMovieData1)}
-      {renderErrorContainer()}
-      {renderLoader()}
+      <div className={styles.container}>
+        {getForm(1913, 2023, genre, Object.keys(languages), data, setMovieData1, movieData1, setCurrMovieData1, currMovieData1)}
+        {renderErrorContainer()}
+        {renderLoader()}
+      </div>
       {renderFooter()}
     </div>
   );
