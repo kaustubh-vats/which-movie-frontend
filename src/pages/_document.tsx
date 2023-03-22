@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
@@ -9,7 +8,7 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <title>Which Movie</title>
-        <Script src="https://kit.fontawesome.com/8976ccf748.js" crossOrigin="anonymous"></Script>
+        <script src="https://kit.fontawesome.com/8976ccf748.js" crossOrigin="anonymous"></script>
       </Head>
       <body>
         <Main />
