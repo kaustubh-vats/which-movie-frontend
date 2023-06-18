@@ -1,6 +1,7 @@
 // pages/index.js
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
+import Head from 'next/head';
 const genre = ['Animation', 'Comedy', 'Family', 'Adventure', 'Fantasy', 'Romance', 'Drama', 'Action', 'Crime', 'Thriller', 'Horror', 'History', 'Science Fiction', 'Mystery', 'War', 'Foreign', 'Music', 'Documentary', 'Western', 'TV Movie']
 const languages: any = {
   'English': 'en',
@@ -404,7 +405,7 @@ const getForm: Function = (minYear: number, maxYear: number, genres: Array<strin
       }
       <section className='display-1 p-5'>
         <p className={styles.Otherway + ' display-6 text-center'}>
-          If you don't know any movie you like, you can also choose some genres and languages you like and we will recommend you some movies.
+          If you don&apos;t know any movie you like, you can also choose some genres and languages you like and we will recommend you some movies.
         </p>
         <i onClick={() => {
           const genreSection = document.getElementById('genreSection');
@@ -507,6 +508,9 @@ export default function Home({ data }: any) {
   const [currMovieData1, setCurrMovieData1] = useState<any>({});
   return (
     <div className={styles.main}>
+      <Head>
+        <title>Which Movie</title>
+      </Head>
       <div className={styles.container}>
         {getForm(1913, 2023, genre, Object.keys(languages), data, setMovieData1, movieData1, setCurrMovieData1, currMovieData1)}
         {renderErrorContainer()}
